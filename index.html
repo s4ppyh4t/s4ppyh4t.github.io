@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!--  
+    <HTML - INDEX PAGE>                                   
+
+Welcome to Tung Nguyen's 2021 Website source code. This website consists of 5 pages, connected in a 
+network-web structure (where the user can navigate through all websites regardless of the starting position).
+ALL of my sites have the same code for the header, footer, the "back to top" button and the navigation bar
+
+This page is the index page, the first page of the website, which has 3 distinct component (other from the ones
+mentioned above): 
+1. Welcome block, 2. "Brief about me" block, 3. "Banner one block".
+See below for more details -->
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>SAPPYHAT - Welcome To My Website</title> <!-- Will be on the tab bar -->
+		<meta name="description" content="Tung Nguyen Website 2023">
+		<meta name="author" content="Tung N">
+		<meta name="keyword" content="sappyhat">
+		<meta name="viewport" content="width=device-width,initial-scale=1,"> <!-- Viewport announcer, important for adaptive websites since it could scale the components with the width of the user's screen-->
+		<link rel="stylesheet" media="only screen and (min-width:750px)" href="css/stylesheet.css"> <!-- PC screens-->
+		<link rel="stylesheet" media="only screen and (max-width:750px)" href="css/stylesheetmobile.css"> <!-- Phone screens -->
+		<link rel="shortcut icon" href="image/logo-wp.ico"> <!-- I put my tiny logo next to the tab bar that will appear in some browsers (like chrome)-->
+	</head>
+		
+	<body>
+		<header> <!-- This is the header for every site-->
+			<div id="header-area"> <!-- The header does not have any sophisticated components, other than the logo in the center. I did not announce its size since everything will be styled in my 2 stylesheets-->
+				<img onclick="window.location.href='about.html'" id="header-logo" src="image/logo-wp.png" alt="sappy-logo">
+				<!-- The onclick attribute makes this image of the logo perform like a button. Clicking on the logo will direct
+				the user to "about.html" page, to know more about me -->
+			</div>	
+		</header>	
+
+		<nav> <!-- This is the navigation bar, including all the navigating buttons. Yes, I have decided to make them as buttons, not just anchor links. Personally I found styling buttons easier than div blocks nesting anchor tags-->
+			<!-- Onclick attribute works the same way as the header-logo element above -->	
+			<button style="background-color: #21d89e;" class="menu-button" onclick="window.location.href='index.html'">Home</button>
+			<!-- The styling rule above will change through every pages. The styling changes the background colour of this butoon to a different 
+			colour compares to other buttons, indicating the webpage that the user is currently on-->	
+			<button class="menu-button" onclick="window.location.href='about.html'">About Me</button>
+			<button class="menu-button" onclick="window.location.href='info.html'">Information</button>
+					
+		</nav>	
+		<br/> <!-- You will see me use this "line break" tag quite a lot, this is the easier way to space out elements, in addition to the margin
+		and padding announced in the stylesheet files -->
+		
+		<div class="entry-block" id="eb1" >
+			<!-- The entry banner, this is one out of 3 entrance banners that exist on this website. For noting purpose, I have breached the rule
+			of "putting images in-line with text" underneath. However, this is how I utilize animated GIF to allow me to do the visual fx that
+			I have not yet able to implement. Basically, next to "This is" text, there will be a changing logo with glitching effect, constantly
+			switching between the word "ME" and my logo, which is presented in most places. With onclick attribute, clicking on it will direct
+			you to about page, like the logo in the header-->
+			<h1 id="entry"> This is&nbsp;<img onclick="window.location.href='about.html'" id="id-img" src="image/logolas.gif" alt="logo"></h1>
+		</div> 
+
+
+		
+		<main> <!-- This is the main part of the webpage, and pretty much the same as any other webpages in this site -->
+			<div id="index-content" > <!-- To differentiate different main blocks, I have IDed each one of them. This block is named "index-content"
+				which will be affected by the styling that has the selector #index-content in the css files. -->
+				<h2 class=" mcon title">a brief about me.</h2>
+				<!-- Some clarification on the class I have named here. All styling can be seen in the stylesheets with the classes announced:
+				1. mcon: short for main content, this indicates each block that are nested in the main component (like index-content)
+				2. text: are the generic class for every blocks that have texts in it. This will be used mainly to decide the font colour and family
+				3. content-text: this defines the text sits inside a content blocks.
+				4. title: This defines the title of every content "block", which should appear differently -->
+
+				<p class="text content-text mcon">As a third-year Information and Communication Technology Bachelor's student at the Swinburne
+					University of Technology with a background in IT and business information systems, I aspire to learn
+					more about Information Systems, the exploration of data and how such processes provide value to many
+					existing and up-and-coming businesses.<br><br>
+					However, I also spend my time and effort looking into the field of graphical design, and where that might collide with ICT, in order to bring
+					both fields' skillsets into effective use.
+					Being an international student also bring certain hardships to my effort to gain a place in the Australian's workforce, but by being a hard-worker,
+					curious, self-discipline and a problem solver, I yearns to achieve more.
+				</p> 
+			</div>	
+			<!-- Aside contents are underneath, which is all IDed for further styling. This is where I used unordered list tags to briefly introduce myself
+			There are two aside blocks in this section, but I decided to make them float underneath the index-content boxes, rather than floating next to it.-->
+			<aside id="aside-one" class="mcon">
+				<img id="portrait" src="image/me.jpg" alt="my face"> <!-- Literally my face, as you can see in the webpage -->
+				<ul id="content-list">
+					<li class="text" ><strong style="color:#49967d">Name:</strong>Tung Duc Nguyen</li>
+					<li class="text"><strong  style="color:#49967d">DOB:</strong> 14/03/2002</li>
+					<li class="text"><strong  style="color:#49967d">Nationality:</strong> Vietnamese</li>
+					<li class="text"><strong  style="color:#49967d">Related Field:</strong> Information & Communication Technology/ Information Systems</li>
+					<li class="text"><strong  style="color:#49967d">Interests:</strong> Digital Graphic Design, Problem Solving, Database Management (<a href="about.html#hobby">more</a>)</li>
+					<li class="text"><strong  style="color:#49967d">Proficient languages:</strong> Vietnamese, English</li>
+				</ul>	
+			</aside>
+<!-- 
+			<aside id="aside-two" class="mcon">
+				<div class="text" id="quote">
+				<p> My motto for life:</p>
+				<q style="font-size:larger; color:yellow;">Always try your best. Only then you would be happy with what you get in the aftermath. I strive </q>
+				</div>
+
+
+			</aside> -->
+		</main>	
+		
+
+		<div id="banner-one"> <!-- This is banner one section that I have mentioned on the top. It 
+			was first named "banner one" for expandability purposes, but I have not put any other side banner, except for this one.-->
+			<div id="ban-title">
+				<h1 class="title">My first real client project: </h1>
+				<p class="text">In this project, I have actively contributed to the design, branding and layout of the website, as well as the branding for our team "Web Ninja"</p>
+				<button class="text banner-button" id="nation-link" 
+				onclick="window.open('documents/tree_proof.pdf')">Learn more</button>
+			</div>
+			 
+
+		</div>
+
+		<div id="banner-two"> <!-- This is banner one section that I have mentioned on the top. It 
+			was first named "banner one" for expandability purposes, but I have not put any other side banner, except for this one.-->
+			<div id="ban-title">
+				<h1 style="color: black;" class="title">My digital graphic designs </h1>
+				<button style="color: black;" class="text banner-button" id="nation-link" 
+				onclick="window.location.href='about.html#achievements'">Learn more</button>
+			</div>
+			 
+
+		</div>
+
+		<aside> <!-- This is the nice feature that I want to add in my website: the "back to top" button
+			Essentially it uses onclick attribute to navigate the user to the header area on each webpage
+			It is styled correctly so that it stays at one place even when you scroll the page up and down-->
+			<button class="text" onclick="window.location.href='#header-area'" id="go-up-button">&uarr;</button>
+		</aside>
+
+		<footer>
+			<!-- Initially this is the "back to top" button, but after I figure out how to use the fixed button
+			like above, this seems to be obsolete. However, this is not the case as this would still be a
+			backup option in case the previous button does not work. It also has a clear presentation and bright 
+			colour, easily assessible to all users -->
+			<div onclick="window.location.href='#header-area'" id="footer-text">
+					<h3 style="font-size:larger">Thank you for visiting this site!</h3>
+					<p>Click here to go back up</p>
+			</div>
+			<!-- I use the class claim to classify all texts that are either copyright claims or my notes for the website. 
+			They are styled to be small and less attention catching, but clear enough to be readable-->
+			<div class="text claim">
+				<q><em>Most of the media used in this website is owned by SAPPYHAT, pseudo name for Tung Nguyen.
+					To check out which elements are not owned by SAPPYHAT, go to page "Information". Thank you!</em></q>
+
+			</div>
+
+				
+		</footer>
+	
+	
+	
+	<!-- And that's the end of this webpage. Other pages will have somewhat similar comments due to
+		the consistency of the website, as some elements will be featured in the same way amongst all pages-->
+	</body>
+	
+	
+</html>

@@ -1,0 +1,650 @@
+/****  
+_____                   _   _                                _____  _____  _____  __  
+|_   _|                 | \ | |                              / __  \|  _  |/ __  \/  | 
+  | |_   _ _ __   __ _  |  \| | __ _ _   _ _   _  ___ _ __   `' / /'| |/' |`' / /'`| | 
+  | | | | | '_ \ / _` | | . ` |/ _` | | | | | | |/ _ \ '_ \    / /  |  /| |  / /   | | 
+  | | |_| | | | | (_| | | |\  | (_| | |_| | |_| |  __/ | | | ./ /___\ |_/ /./ /____| |_
+  \_/\__,_|_| |_|\__, | \_| \_/\__, |\__,_|\__, |\___|_| |_| \_____/ \___/ \_____/\___/
+                  __/ |         __/ |       __/ |                                      
+                 |___/         |___/       |___/      /CSS - PC/                                   
+****/
+/* In this design I took inspiration from "The Matrix" design style
+with green and black as main colours, providing a futuristic, neon and cyber-like
+look, expressing my own kind of style. This is what I want to present in my website*/
+/* you may have noticed that I used many types of relative scaling units underneath, with the
+introduction of vw, that scales the elements based on the size of your viewport, or screen*/
+/***** general settings ****/
+html{
+    background-color:rgb(0, 0, 0);
+    scroll-behavior: smooth; /*THIS IS AN IMPORTANT STYLING ATTRIBUTE IN THE WEBPAGE. With just this line of code
+    I could make any scrolling action (from anchoring, to user scrolling) "smooth". This means that when you click on
+    a navigational anchor on the page that directs you to a different section in the SAME PAGE, the browser
+    would smoothly "scroll" to the section, rather than jumping right to it. This affects everything, including
+    the "internal-navigation" blocks that you could see later on*/
+}
+
+hr{
+    border: 2px dashed #49967d;
+}
+/* This makes the highlighting color turns green, when viewer wants to highlight the text on my websites*/
+::selection {
+    color: white;
+    background: #49967d;
+  }
+
+  /*The part underneath styles the scroll bar to fit the theme of the website*/
+    /* width */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #303030;
+    border:0.75px solid #357762; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #49967d; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #56d8af; 
+}
+/* Every texts in the website, by default, are in whitesmoke colors, with a monospace font and font size as below*/  
+.text{
+    color:whitesmoke;
+    font-family:monospace;
+    font-size:1.7vw;
+}
+
+
+h1{
+    color:whitesmoke;
+    font-family:monospace;
+    font-size:4vw;
+}
+
+h2{
+    color:whitesmoke;
+    font-family:monospace;
+    font-size: 3vw ;
+}
+
+h3{
+    color:whitesmoke;
+    font-family:monospace;
+    font-size: 2vw ;
+}
+
+
+a{
+    color:rgb(254, 241, 51);
+}
+
+a:hover{
+    animation: color-change-foot 2s infinite;
+    /* This is one of the animation which will be announced later on. This makes the anchors change colors when you hover through it*/
+}
+/* Some images should be displayed smaller on mobile, or even desktop. With this class assigned to them, I could control their sizes*/
+.mobile-image{
+    width:50%;
+}
+/* Tags with mobile-content class are hidden in desktop views*/
+.mobile-content{
+    display:none;
+}
+/***** general settings ****/
+
+
+
+
+
+/* header and navigation bar starts */
+
+header{
+    background-color :black;
+    background-image: linear-gradient(to right, #3dc89c,#49967d, #22e4a7);
+    text-align :center;  
+    height:40%;
+    margin-bottom:1% ;
+}
+
+#header-logo{
+    overflow:hidden;
+    animation: entrance 2s;
+    transition: transform .3s;
+    height:8%;
+    width:8%;
+    /*If the logo turns too big in scale, it will automatically be hidden from the view*/
+}
+
+#header-logo:hover{
+    transform: translatex(-25px);
+}
+/*Cool entrance animation and hover animation for the logo, as it move
+and turns from the top (out of frame), to its correct position (in frame).
+The hovering animation translate the logo to the left, a little bit, to create some kind of a 
+nudging notification for the user, indicating that it is clickable. (its not gonna be introduced on mobile)*/
+@keyframes entrance{
+    0%{transform: rotate(180deg) translatey(200px);opacity:0;}
+    75%{transform:translatey(0px);}
+    100%{transform: rotate(0deg);opacity:1;}
+}
+
+nav{
+    text-align:center;
+    padding-top:10px;
+    padding-bottom:10px;   
+    margin-right:5% ;
+    margin-left:5% ;
+
+}
+/*Centered the navigation bar*/
+nav div{
+    margin:auto;
+    
+}
+/* Navigation bar conventional look, 1 row, many buttons*/
+.menu-button {
+    width:14vw;
+    height:4vw;
+    margin:1%;
+    border:none;
+    color:white;
+    font-size:1.5vw;
+    font-family:monospace;
+    border-radius:6vw;
+    background-color:#49967d;
+    transition: transform .3s;
+    overflow: auto; /*in case the text in the button gets too large, the button will automatically expands to contain the text, rather than letting it spilled outside*/
+    
+}
+/*hover animation for menu buttons*/
+.menu-button:hover {
+    transform: translateY(5px);
+    background-color:#21d89e;
+}
+/************ header and navigation bar ends **************/
+
+
+
+
+/************ entry starts ****************/
+/*entry sections represent the introductional banner that appears on top
+    of every page, some of them may have directional buttons to direct the viewer
+    to some other certain places.
+    There are 3 banners currently availble: 
+    - eb1 is for home page
+    - eb2 is for my hometown page
+    - eb3 is for about page
+    Each has different background and is allowed to be styled differently*/
+.entry-block{
+    overflow:auto;
+    margin:0% 5% 2% 5%;
+}
+
+/* Main page's banner background pic */
+#eb1{
+    background-image:url("../image/banner_bg.gif");
+    background-repeat: repeat-x;
+    background-size: auto;
+    background-position:cover;/* the two lines above allow us to control how the background-image of the components will display*/
+}
+/*same thing applies to the two components below*/
+#eb2{
+    background-image:url("../image/me3.jpg");
+    background-repeat:repeat-x;
+    background-position:center;
+}
+
+#eb3{
+    background-image:url("../image/banner_bg.gif");
+    background-repeat:repeat-x;
+    background-position:left;
+}
+/*This change the texts inside the banner*/
+#entry{
+    margin:0;
+    padding:10% 5% 10% 5%;
+    text-align:center;
+    font-size:4vw;
+    color: white;
+    animation: tracking-in 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    }
+
+/* --------Animation named "tracking-in", making the texts
+slide in everytime the page is reloaded-------------
+* Modified from the animation generation on Animista
+* Licensed under FreeBSD License.
+* See http://animista.net/license for more info. 
+* w: http://animista.net, t: @cssanimista
+* ---------------------------------------------- */
+
+@keyframes tracking-in{
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+/*The twitching word "ME" in banner eb1 and eb3 is actually
+a GIF file that I made, which is styled here to fit the heading text in the entrance banner*/
+#id-img{
+    width:4vw;
+    height:3vw;
+    transition: transform .3s;
+}
+
+#id-img:hover {
+    transform: translateY(10px);
+}
+
+/************ entry ends **************/
+
+
+
+
+/************* sub-section ***************/
+/*Sub section includes the animated welcome bar in Home Page and
+    some navigational box with anchors that directs the viewer to the
+    topic they wanted to read (in case the content inside a page is too big*/
+
+/* Internal navigation sections are contained inside a bordered blocks, where links are purely anchors
+and not styled in any fancy way (sorry abt that)*/
+.internal-navigation{
+    margin:auto;
+    text-align:center;
+    margin-left:5%;
+    margin-right:5%;
+    border:2px solid #49967d;
+}
+
+.navigation-list li{
+    display:inline;
+    padding-left:5vw;
+    padding-right:5vw;
+    font-size:1.75vw;
+}
+/************ sub-section ends ***********/
+
+
+
+/*main edit starts*/
+/*** main ***/
+/* This is the no-brainer section, which show the styling for
+the main area of each webpage*/
+main{
+    margin:2% 5% 2% 5%;
+    border:0.5vw dashed #49967d;
+    padding:2%;
+    overflow:auto;
+}
+
+.content-img{
+    height:24vw;
+    width:20vw;
+    float:left;
+    padding:0vw 2vw 1vw 0vw;
+}
+
+.mcon{
+    margin-top:2%;
+}
+
+.title{
+    color:#10feb3;
+}
+
+
+.content-text{
+    margin:0;
+    text-align:justify;
+}
+
+.hobby-list{
+    
+    overflow:auto;
+    border:1px solid #49967d;
+    padding: 0% 2% 2% 2%;
+}
+
+#music-list{
+    width:45%;
+    float:right;
+}
+
+#movie-list{
+    width:45%;
+    float:left;
+}
+
+#hobby, #achievements{
+    float:left;
+}
+
+
+
+/*** aside ***/
+    /* Even though I named this section as aside, some parts in this area
+    are actually not <aside> related elements, but they are just elements that
+    are supporting the main part that is containing this, or supportive/patching styling */
+#portrait{
+    width:17%;
+    height:auto;
+    float:left;
+    border:1px solid #49967d;
+    object-fit: cover;
+    /*my face*/
+}
+
+#content-list{
+    float:left;
+    margin:0;
+    width:75%;
+}
+/*aside one and two are parts of the Home Page tabs that show my motto and face*/
+#aside-one{
+    float:left;
+    width:90%;
+    border:2px solid #49967d;
+    padding:1% 1% 2% 1%;
+    margin: 2% 3.5%;
+}
+
+#aside-two{
+    float:right;
+    width:42%;
+    border:2px solid #49967d;
+    padding:1% 2% 2% 2%;
+}
+
+/*aside three is the gallery in About page*/
+#aside-three{
+    border:0.5vw dashed #49967d;
+    margin:2% 5% 2% 5%;
+    padding:1% 2% 2% 2%;
+    overflow:auto;
+}
+/* The galleries styling*/
+.gl-image{
+    width:300px;
+    height:300px;
+    object-fit:cover;	
+}
+#gal01{
+    overflow:scroll;
+    height:30vw;
+    border:2px solid #49967d;
+    margin:0% 13% 0% 13%;
+    }
+
+#gal02{
+    overflow:scroll;
+    height:40vw;
+    border:2px solid #49967d;
+    margin:0% 13% 0% 13%;
+}    
+
+.gallery table{
+    text-align:center;
+    margin :auto;
+}
+
+#aussie-pic{
+    width:200px;
+    height:200px;
+    object-fit:cover;	
+    float:left;
+}
+/********* main edit ends ************/
+
+#yt-vid{
+    display:block;
+    margin:auto;
+}
+
+
+
+/******* banner starts *******/
+/*This is the additional banner that only appears in the Home Page, but I
+decided to put it into a distinct area, since I can update more banners in
+the future if I want to (and no, this is not the entry banner)*/
+#banner-one{
+    margin:0% 5% 2% 5%;    
+    background-image:url("../image/proof1.png");
+    background-size: cover;
+    background-position: center;
+    
+
+    /* background-position: center; */
+}
+
+#banner-two{
+    margin:0% 5% 2% 5%;    
+    background-image:url("../image/blurbruh.png");
+    background-size: cover;
+    background-position: center;
+}
+
+#ban-title{
+    padding-top:5%;
+    padding-bottom:5%;
+    padding-left:5%;
+    text-align:left;
+    font-size:4vw;
+    color: white;
+    margin:0;
+}
+
+.banner-button{
+    background-color:transparent;
+    font-family:monospace;
+    border-radius:10px;
+    border:2px solid whitesmoke;
+    transition: transform .3s;
+}
+
+.banner-button:hover {
+    background-color:#49967d;
+    transform: translateY(5px);
+}
+
+
+
+/***** banner ends *****/
+
+
+
+/********** TIME TABLE, FORM, ANM STYLING ************/
+ /*This section below is probably one of the most important
+    styling area in this css file. This helps me style the
+    timetable and contact form in Information page. There are also
+    some additional styling*/
+#timetable-title{
+    animation: tracking-in 2s;
+}
+.myTimetable {
+    width:90%;
+    margin:auto;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border:2px solid #49967d;
+    animation: swoosh-in 2s;
+    background-image:url("../image/load_1.gif");
+    background-repeat:repeat-x;
+    background-position:center;
+    background-size:94vw 36vw ;
+  }
+  
+  .myTimetable th{
+    color: #0dffb2;
+    background-color: #49967d;
+  }
+  
+  
+  .myTimetable td {
+    padding: 6px;
+    text-align: center;
+  }
+  
+  
+  .subject {
+    margin-bottom:4px;
+    font-weight:bold;
+  }
+  
+  td div{
+      animation: swoosh-in 3s;
+  }
+
+  @keyframes swoosh-in{
+    0% { transform: translatey(-30px); }
+    100% { transform: translatey(0px); }
+  }
+
+/*I took some the code from my previous Lab03 task, and modify it
+    to fit this webpage*/
+
+  #contact-form{
+      overflow:auto;
+      display:block;
+      
+  }
+  #form-content{
+    margin:0% 15% 0% 15%;
+    text-align:center;
+    background-image: linear-gradient(to right, #128661,#346455, #089367);
+    border:none;  
+  }
+
+  .box{
+      background:none;
+      border:2px solid white;
+      font-size:smaller;
+  }
+
+  .option{
+      background-color:#49967d;
+  }
+
+  #copyright{
+      margin:5% 5% 5% 5%;
+      padding:2%;
+      animation: border-blink-red 10s infinite;
+      border:3px solid rgb(78, 1, 1);
+  }
+
+  #copy-title{
+      color:rgb(150, 0, 0);
+      animation: blink-red 10s infinite;
+  }
+  /* The copyright notice section will be styled with a
+    "blinking red" animation to grab viewer's attention while 
+    scrolling through it */
+  @keyframes blink-red{
+      0%{text-shadow: 0 0 1vw black;color:rgb(78, 1, 1)}
+      1%{text-shadow: 0 0 1vw red;color:red}
+      2%{text-shadow: 0 0 1vw black;color:rgb(78, 1, 1)}
+      4%{text-shadow: 0 0 1vw red;color:red}
+      6%{text-shadow: 0 0 1vw black;color:rgb(78, 1, 1)}
+      10%{text-shadow: 0 0 1vw red;color:red}
+      100%{text-shadow: 0 0 1vw black;color:rgb(78, 1, 1)}
+  }
+
+  @keyframes border-blink-red{
+    0%{border:3px solid rgb(78, 1, 1)}
+    1%{border:3px solid red}
+    2%{border:3px solid rgb(78, 1, 1)}
+    4%{border:3px solid red}
+    6%{border:3px solid rgb(78, 1, 1)}
+    10%{border:3px solid red}
+    100%{border:3px solid rgb(78, 1, 1)}
+}
+
+  #outsources div{
+      text-align: center;
+      margin:2%;
+  }
+
+  #anm-title{
+      animation: change-color 3s infinite;
+  }
+
+
+/********** TIME TABLE, FORM, ANM STYLING ENDS ************/
+
+
+
+
+/***** footer starts ******/
+/* The footer has nothing special when it comes to styling,
+    but it got that cool looking loading GIF as the background,
+    which I have cited in Information Page*/
+footer{
+    border:5px dashed #49967d;
+    padding:1%;
+    overflow:auto;
+    margin-top:5%;
+    background-image:url(../image/load_1.gif);
+}
+
+#footer-text{
+    font-size:1.75vw;
+    font-family:monospace;
+    text-align: center;
+    width:70%;
+    animation: color-change-foot 5s infinite;
+    transition: transform .3s;
+    margin: auto;
+}
+
+@keyframes color-change-foot {
+    0% { color: yellow; }
+    25% { color:#49967d; }
+    75% { color: white; }
+    100% { color: yellow; }
+}
+
+
+#footer-text:hover{
+    transform: translatey(-7px);
+}
+
+.claim{
+    font-size: 1.2vw;
+    opacity:0.85;
+    color:whitesmoke;
+    text-align :center;
+    width:100%;
+}
+
+#go-up-button{
+    width:45px;
+    height:45px;
+    border:solid 2px rgb(156, 156, 156);
+    border-radius:0.5vw;
+    background-color:transparent;
+    position:fixed;
+    bottom:1vw;
+    right:1vw;
+    animation: border-blink-red 10s;
+    
+}
+
+#go-up-button:hover{
+    background-color:rgb(231, 231, 231);
+    color:red;
+}
+
+/******* footer ends ********/

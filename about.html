@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!--  				<HTML - ABOUT PAGE>                                   
+
+Welcome to Tung Nguyen's 2021 Website source code. This website consists of 5 pages, connected in a 
+network-web structure (where the user can navigate through all websites regardless of the starting position).
+ALL of my sites have the same code for the header, entrance banner, footer, the "back to top" button and the navigation bar
+
+This page is the ABOUT page, where you can find most of the things you need to know about me:
+1. My Hobbies, 2. My Achievements, 3. Stuffs that I have graphically designed (digitally), 4. Life in Australia
+See below for more details -->
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>SAPPYHAT - About Me</title>
+		<meta name="description" content="Tung Nguyen Website 2023">
+		<meta name="author" content="Tung N">
+		<meta name="keyword" content="sappyhat">
+		<meta name="viewport" content="width=device-width,initial-scale=1,"> <!-- same for every website-->
+		<link rel="stylesheet" media="only screen and (min-width:750px)" href="css/stylesheet.css"> <!-- PC screens-->
+		<link rel="stylesheet" media="only screen and (max-width:750px)" href="css/stylesheetmobile.css"> <!-- Phone screens -->
+		<link rel="shortcut icon" href="image/logo-wp.ico"> <!-- I put my tiny logo next to the tab bar that will appear in some browsers (like chrome)-->
+	</head>
+		
+	<body>
+		<header> <!-- This is the header for every site-->
+			<div id="header-area"> <!-- This section is exactly like the the one in index page, or every page-->
+				<img onclick="window.location.href='about.html'" id="header-logo" src="image/logo-wp.png" alt="sappy-logo">
+				<!-- The onclick attribute makes this image of the logo perform like a button. Clicking on the logo will direct
+				the user to "about.html" page, to know more about me -->	
+			</div>	
+		</header>	
+	
+		<nav> <!-- This is the navigation bar, including all the navigating buttons. Yes, I have decided to make them as buttons, not just anchor links. Personally I found styling buttons easier than div blocks nesting anchor tags-->
+			<div>
+				<button class="menu-button" onclick="window.location.href='index.html'">Home</button>
+				<button style="background-color: #21d89e;" class="menu-button" onclick="window.location.href='about.html'">About Me</button>
+				<!-- The button above lights up, indicating that the user is in "About" page -->
+				<button class="menu-button" onclick="window.location.href='info.html'">Information</button>
+			</div>		
+		</nav>	
+		<br/>
+		
+		
+		<div class="entry-block" id="eb3" > <!-- This is the third, and the final entrance block in the whole webpage-->
+			<h1 id="entry" style="color: #21d89e;"> My capabilities </h1>
+		</div> <!-- THe purpose of the heading block above is similar to the index page's one, but since you are
+				already in the "About page", there is no need for the hyperlink in "onclick" attribute to work anymore-->
+		
+		<nav class="internal-navigation">
+			<!-- THis is the newly introduced element/section, the "internal-navigation" list
+			as it is hard to navigate through a really long page, with a long content, it is good to have 
+			a navigation bar, or an interactive index to go through different sections listed in it
+			
+			This navigation list will take you through many parts of the website. (3 to be specific)-->
+			<h2>In this section, you will learn about:</h2>
+			<ol class="navigation-list">
+				<li class="text"><a href="#hobby">My interests</a></li>
+				<li class="text"><a href="#achievements">My design works</a></li>
+			</ol>	
+		</nav>
+		
+		<main> <!-- This is probably the longest main section in the whole website-->
+			<section id="hobby" class="mcon"> <!-- sections are now being contained in actual section tags, with each of them IDed accordingly
+			to help me with the styling part-->
+				<!-- Here are the explanation to the classes that I used underneath:
+				1. mcon: short for main content, this indicates each block that are nested in the main component (like nation-content)
+				2. text: are the generic class for every blocks that have texts in it. This will be used mainly to decide the font colour and family
+				3. content-text: this defines the text sits inside a content blocks.
+				4. title: This defines the title of every content "block", which should appear differently
+				t. hobby-list: this basically is grouping method that I used on the two ordered lists-->
+				
+				<h2 class="content-text mcon title">My interests</h2>
+				<br/>
+				<p class="text content-text mcon">I have devoted my life to the world of ICT, but my interests lies within the realm of digital graphical design.
+					Designing brings great prospect to my creation, and throughout the years of practicing and creating, I began to get familiarised with the industrial toolsets
+					Below is an example of a presentation animation made by me, using Adobe Illustrator and After Effect.
+					
+				</p>
+				
+				<br/>
+				<!-- The iframe element, this is used to embed a YouTube video into the body of the website. This part of code is copied directly from YouTube-->
+				<iframe id="yt-vid" width="220" height="385" src="https://www.youtube.com/embed/l2yh0-d89_w" title="LOREAL BRANDSTORM 2023 Export Animation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<br/>
+				
+				<p class="text content-text mcon">	
+					The following gallery is a representation of the <a href="#gal02">digital artwork designs on my computer</a>: <!-- Anchor to the gallery below-->
+				</p>	
+				<br>		
+				<br>		
+				
+			</section>
+			<!-- One class that I forgot to mentioned above: "mobile-content". This defines the content that will only 
+			appear on the screen when a "mobile display" is detected by the browser. One of the main differences that 
+			appears on my website. The styling of it will be explained in the stylesheets-->
+			<br/><hr><p class="text mobile-content">Drag this to get through this section</p><hr/>
+
+			<section id="achievements" class="mcon">
+					
+					<h2 class="content-text mcon title">Digital Design Gallery</h2>
+					<br/>
+					<br/>
+				
+					<p class="text content-text mcon">These are some of my digital design projects. There are only a few of them presented, but I hope it could portray what is needed for my purpose. Click on individual images to view in full-size!
+					</p>
+					<br/><br/>
+						<!-- Gallery of similar style as the one in index page, check out index page's source code to see more -->
+						<div class="gallery" id="gal02">
+							<table>
+							<tbody>
+								<tr id="row1">
+									<td><img onclick="window.open('image/gal-2/art01.jpg')" src="image/gal-2/art01.jpg" alt="yes" class="gl-image"></td>
+									<td><img onclick="window.open('image/gal-2/art02.png')" src="image/gal-2/art02.png" alt="yes" class="gl-image"></td>
+									<td><img onclick="window.open('image/gal-2/art03.png')" src="image/gal-2/art03.png" alt="yes" class="gl-image"></td>
+								</tr>
+								<tr id="row2">
+									<td><img onclick="window.open('image/gal-2/art04.png')" src="image/gal-2/art04.png" alt="yes" class="gl-image"></td>
+									<td><img onclick="window.open('image/gal-2/art05.png')" src="image/gal-2/art05.png" alt="yes" class="gl-image"></td>
+									<td><img onclick="window.open('image/gal-2/art07.png')" src="image/gal-2/art07.png" alt="yes" class="gl-image"></td>
+								</tr>
+								<tr id="row3">
+									<td><img onclick="window.open('image/gal-2/art06.gif')" src="image/gal-2/art06.gif" alt="yes" class="gl-image"></td>
+									  <td><img onclick="window.open('image/gal-2/art08.gif')" src="image/gal-2/art08.gif" alt="yes" class="gl-image"></td>
+									  <td><img onclick="window.open('image/gal-2/art10.png')" style="background-size:auto" src="image/gal-2/art10.png" alt="yes" class="gl-image"></td>
+								</tr>
+								
+								
+							</tbody>	
+							</table>
+						</div> <!-- Check footer to know what "claim" class means-->
+						<p class="text claim">Courtesy of Tung Nguyen - 2023</p>
+						<p class="text claim" style="color:red"><strong>Some images are large in size. You may encounter jitters upon loading</strong></p>
+							
+			</section>
+		</main>	
+
+		<aside><!-- This is the nice feature that I want to add in my website: the "back to top" button
+			Essentially it uses onclick attribute to navigate the user to the header area on each webpage
+			It is styled correctly so that it stays at one place even when you scroll the page up and down-->
+			<button class="text" onclick="window.location.href='#header-area'" id="go-up-button">&uarr;</button>
+		</aside>
+
+
+		<footer>
+			<!-- I use the class claim to classify all texts that are either copyright claims or my notes for the website. 
+				They are styled to be small and less attention catching, but clear enough to be readable-->
+			<!-- Initially this is the "back to top" button, but after I figure out how to use the fixed button
+			like above, this seems to be obsolete. However, this is not the case as this would still be a
+			backup option in case the previous button does not work. It also has a clear presentation and bright 
+			colour, easily assessible to all users -->
+			<div onclick="window.location.href='#header-area'" id="footer-text">
+				<h3 style="font-size:larger">Thank you for visiting this site!</h3>
+				<p>Click here to go back up</p>
+		</div>
+		
+		<div class="text claim">
+			<q><em>Most of the media used in this website is owned by SAPPYHAT, pseudo name for Tung Nguyen.
+				To check out which elements are not owned by SAPPYHAT, go to page "Information". Thank you!</em></q>
+
+		</div>
+	
+				
+		</footer>
+		
+		
+		
+		
+		</body>
+	
+	
+</html>

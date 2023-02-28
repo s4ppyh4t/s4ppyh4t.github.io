@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!--  				<HTML - INFO PAGE>                                   
+
+Welcome to Tung Nguyen's 2021 Website source code. This website consists of 5 pages, connected in a 
+network-web structure (where the user can navigate through all websites regardless of the starting position).
+ALL of my sites have the same code for the header, entrance banner, footer, the "back to top" button and the navigation bar
+
+This page is the INFO page, The info page is where you can use to communicate with me (ideally), as it contains:
+1. My timetable, 2. Contact form, 3. Copyright notice
+See below for more details -->
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>SAPPYHAT - Contacts & Time</title>
+		<meta name="description" content="Tung Nguyen Website 2023">
+		<meta name="author" content="Tung N">
+		<meta name="keyword" content="sappyhat">
+		<meta name="viewport" content="width=device-width,initial-scale=1,">
+		<link rel="stylesheet" media="only screen and (min-width:750px)" href="css/stylesheet.css"> <!-- PC screens-->
+		<link rel="stylesheet" media="only screen and (max-width:750px)" href="css/stylesheetmobile.css"> <!-- Phone screens -->
+		<link rel="shortcut icon" href="image/logo-wp.ico">
+	</head>
+		
+	<body>
+		<header> <!-- This is the header for every site-->
+			<div id="header-area"> <!-- This section is exactly like the the one in index page, or every page-->
+				<img onclick="window.location.href='about.html'" id="header-logo" src="image/logo-wp.png" alt="sappy-logo">
+				<!-- The onclick attribute makes this image of the logo perform like a button. Clicking on the logo will direct
+				the user to "about.html" page, to know more about me -->
+			</div>	
+		</header>	
+	
+		<nav><!-- This is the navigation bar, including all the navigating buttons. Yes, I have decided to make them as buttons, not just anchor links. Personally I found styling buttons easier than div blocks nesting anchor tags-->
+			<div>
+				<button class="menu-button" onclick="window.location.href='index.html'">Home</button>
+				<button class="menu-button" onclick="window.location.href='about.html'">About Me</button>
+				<button style="background-color: #21d89e;" class="menu-button" onclick="window.location.href='info.html'">Information</button>
+			</div>		
+		</nav>	
+		<br/>
+		
+		<nav class="internal-navigation">
+			<h2>Stuffs that are listed in this section:</h2>
+			<ol class="navigation-list">
+				<li class="text"><a href="#timetable">Timetable</a></li>
+				<li class="text"><a href="#contact-form">Contact Form</a></li>
+				<li class="text"><a href="#copyright">Copyright Statement</a></li>
+			</ol>	
+		</nav>
+		
+		
+		<h2 id="timetable-title" style="text-align: center;">Weekly Uni Timetable</h2>
+		<!-- This table is a modified version of a TimeTable listed on the 
+			following link: https://www.101computing.net/my-timetable-in-html-css/ 
+		This table is amazing in the fact that the creator has miticulously classified all the components
+		that I needed, which makes it really easy to personalize it based on my desire-->
+		<p class="text mobile-content" style="text-align: center;"> {- Scroll Sideways -}</p>
+		<div id="timetable">
+			<table  class="myTimetable"> 
+			<thead>
+				<tr>
+				<th class="text">Monday</th>
+				<th class="text">Tuesday</th>
+				<th class="text">Wednesday</th>
+				<th class="text">Thursday</th>
+				<th class="text">Friday</th>     
+				</tr>
+			</thead>
+			<!-- The boxes are colored based on the unit's color appeared on my s1.swinburne schedule, a little effort to maintain consistency in colour-coding-->
+			<!-- Each data in a "td" tag is a cell, while many cells in the same level of their row creates a column (like in excell), every "tr" is a row.-->
+			<tbody>
+				<tr>
+				<td style="background-color: rgb(20, 190, 184);" class="text">
+					<div  class="subject text">COS30045 (Online)</div>
+					<div class="room" style="color:black">9:30 - 10:30</div>
+				</td>
+				<td >
+					<div class="subject">&nbsp;</div>
+					<div class="room text" style="color:black"> &nbsp; </div>
+				</td>
+				<td class="text">        
+					<div class="subject text"> &nbsp; </div>
+					<div class="room text" style="color:black" > &nbsp; </div>
+				</td>
+				<td class="text">        
+					<div class="subject text"> &nbsp; </div>
+					<div class="room text" style="color:black" > &nbsp; </div>
+				</td>
+				<td class="text">        
+					<div class="subject text"> &nbsp; </div>
+					<div class="room text" style="color:black" > &nbsp; </div>
+				</td>   
+				</tr>
+				
+				<tr>
+				<td style="background-color: rgb(208, 185, 83);" class="text">        
+					<div class="subject text"> SWE30010 - Q&A </div>
+					<div class="room text" style="color:black" > 11:30 - 12:30 </div>
+				</td>
+				<td class="text">        
+					<div class="subject text"> &nbsp; </div>
+					<div class="room text" style="color:black" > &nbsp; </div>
+				</td>
+				<td class="text">        
+					<div class="subject text"> &nbsp; </div>
+					<div class="room text" style="color:black" > &nbsp; </div>
+				</td>
+				<td class="text">        
+					<div class="subject text"> &nbsp; </div>
+					<div class="room text" style="color:black" > &nbsp; </div>
+				</td>
+				<td style="background-color: #afafff;" class="text">        
+					<div class="subject text"> INF20028 (Tutorial) </div>
+					<div class="room text" style="color:black" > 10:30 - 12:30 </div>
+				</td>
+				</tr>
+				
+				<tr>
+					<td style="background-color: rgb(20, 190, 184);" class="text">
+						<div  class="subject text">COS30045 (Tutorial)</div>
+						<div class="room" style="color:black">12:30 - 14:30</div>
+					</td>
+					<td class="text">        
+						<div class="subject text"> &nbsp; </div>
+						<div class="room text" style="color:black" > &nbsp; </div>
+					</td>
+				<td class="text">        
+					<div class="subject text"> &nbsp; </div>
+					<div class="room text" style="color:black" > &nbsp; </div>
+				</td>
+				<td class="text">        
+					<div class="subject text"> &nbsp; </div>
+					<div class="room text" style="color:black" > &nbsp; </div>
+				</td>
+				<td class="text">        
+					<div class="subject text"> &nbsp; </div>
+					<div class="room text" style="color:black" > &nbsp; </div>
+				</td>
+				</tr>
+				
+				<tr>
+				<td class="text">        
+					<div class="subject text">&nbsp;</div>
+					<div class="room text" style="color:black" >&nbsp;</div>
+				</td>
+				<td class="text">        
+					<div class="subject text"> &nbsp; </div>
+					<div class="room text" style="color:black" > &nbsp; </div>
+				</td>
+				<td class="text">        
+					<div class="subject text"> &nbsp; </div>
+					<div class="room text" style="color:black" > &nbsp; </div>
+				</td>
+				<td class="text">        
+					<div class="subject text"> &nbsp; </div>
+					<div class="room text" style="color:black" > &nbsp; </div>
+				</td>
+				<td class="text">        
+					<div class="subject text"> &nbsp; </div>
+					<div class="room text" style="color:black" > &nbsp; </div>
+				</td>
+				
+				</tr>
+				
+				<tr>
+					<td style="background-color: #e7b6dc;" class="text">        
+						<div class="subject text">INF30004 (Tutorial)</div>
+						<div class="room text" style="color:black" >15:30 - 17:30 </div>
+					</td>
+					<td style="background-color: rgb(208, 185, 83);" class="text">        
+						<div class="subject text"> SWE30010 - Tutorial </div>
+						<div class="room text" style="color:black" > 16:30 - 18:30 </div>
+						<td class="text">        
+							<div class="subject text"> &nbsp; </div>
+							<div class="room text" style="color:black" > &nbsp; </div>
+						</td>
+					<td class="text">        
+						<div class="subject text"> &nbsp; </div>
+						<div class="room text" style="color:black" > &nbsp; </div>
+					</td>
+					<td class="text">        
+						<div class="subject text"> &nbsp; </div>
+						<div class="room text" style="color:black" > &nbsp; </div>
+					</td>
+					
+					</tr>
+			</tbody>
+			</table>
+		</div>
+		<br/><br/>
+		<!-- The contact form the inspired by my own code in Lab03, saved me heeps of time.
+		Currently it directs, or "post" users' input to the university's server, but ideally it should submit it to my
+		personal database, so I could see the comments my viewers made-->
+		<form class="text" id="contact-form" method="post" action="http://mercury.swin.edu.au/it000000/cos10005/surveytest.php">
+			<fieldset id="form-content">
+			<legend> <h3 id="form-title">This does not perform POST requests, just a placeholder:</h3> </legend>
+				<label for="name">Name (Optional) :</label>
+				<input class="box text" type="text" name="uname" id="name" placeholder="Your name">
+				<br/>
+				<label for="email">Email (Required):</label>
+				<!-- THis field is required for people who want to submit the form.-->
+				<input required="required" class="box text" type="email" name="email" id="email" placeholder="Your email">
+				<br/><br/>
+				<label for="topic-type">Your topic:</label>
+				<select id="topic-type" class="box text" name="topic-type">
+					<!-- You can select your topics of your comment, based on your needs. I would be able to process this and classify the inputs-->
+					<option class="option" value="comments">General comments</option>
+					<option class="option" value="copyrights">Copyrights</option>
+					<option class="option" value="content">Content-related</option>
+				</select>
+				<br/><br/>
+				<textarea class="box text" id="textbox" name="comments" rows="10" cols="50" placeholder="Write your message here"></textarea>	
+				<br/><br/>
+				<input class="box text" type="submit" value="Submit">
+				<input class="box text" type="reset" value="did an oopsie? reset here"> <!-- funny yea? :D-->
+			</fieldset>
+			
+			
+			
+			
+		</form>
+		<!-- Copyright notice section to announce the elements that are not owned by me, and thus needed to be credited-->
+		<!-- Check out #copyright in my stylesheet to see how the cool red blinking effect is made-->
+		<section class="mcon" id="copyright" >
+			<h2 id="copy-title" class="mcon">Copyright Notice</h2>
+			<div class="mcon text">
+				This is the statement to announce the ownerships and copyrights of 
+				the visuals and media that have been used in this website (as a whole).
+				All media, contents and logos are owned by Tung Nguyen (or SAPPYHAT as pseudo-name)
+				should not be distributed without my acknowledgement. For information, email me at
+				<a href="mailto:td.nguyen3320@gmail.com">td.nguyen3320@gmail.com</a>. <!-- Clicking on the anchor "mailto" will direct you to your default mailing application, and allow you to send an email directly to me, with my address prefilled-->
+				This includes everything except for the following media, which are not owned by me.
+				The source to each elements are listed underneath:
+			</div>
+			<br/>
+			
+				<!-- The image and the link to lead the user to the correct place. You may notice
+				the class called "mobile-image", which helps with the styling of such image when put in mobile sized browsers,
+				and react differently to the screen sizes-->
+			<img class="mobile-image" src="image/load_1.gif" alt="loading-gif" >
+			<p class="text">Loading GIF: <a href="https://discoverygc.com/forums/showthread.php?tid=143437">Here</a></p>
+		</section>
+	
+	
+		<aside><!-- This is the nice feature that I want to add in my website: the "back to top" button
+			Essentially it uses onclick attribute to navigate the user to the header area on each webpage
+			It is styled correctly so that it stays at one place even when you scroll the page up and down-->
+			<button class="text" onclick="window.location.href='#header-area'" id="go-up-button">&uarr;</button>
+		</aside>
+	
+	
+		<footer><!-- I use the class claim to classify all texts that are either copyright claims or my notes for the website. 
+			They are styled to be small and less attention catching, but clear enough to be readable-->
+		<!-- Initially this is the "back to top" button, but after I figure out how to use the fixed button
+		like above, this seems to be obsolete. However, this is not the case as this would still be a
+		backup option in case the previous button does not work. It also has a clear presentation and bright 
+		colour, easily assessible to all users -->
+			<div onclick="window.location.href='#header-area'" id="footer-text">
+				<h3 style="font-size:larger">Thank you for visiting this site!</h3>
+				<p>Click here to go back up</p>
+			</div>
+		
+		<div class="text claim">
+			<q><em>Most of the media used in this website is owned by SAPPYHAT, pseudo name for Tung Nguyen.
+				To check out which elements are not owned by SAPPYHAT, go to page "Information". Thank you!</em></q>
+		</div>		
+		</footer>
+		
+		
+		
+		
+	</body>
+	
+	
+</html>
