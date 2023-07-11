@@ -13,50 +13,44 @@ See below for more details -->
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>SAPPYHAT - Welcome To My Website</title> <!-- Will be on the tab bar -->
+		<title>Sappyhat's Digital Portfolio</title> <!-- Will be on the tab bar -->
 		<meta name="description" content="Tung Nguyen Website 2023">
 		<meta name="author" content="Tung N">
 		<meta name="keyword" content="sappyhat">
 		<meta name="viewport" content="width=device-width,initial-scale=1,"> <!-- Viewport announcer, important for adaptive websites since it could scale the components with the width of the user's screen-->
-		<link rel="stylesheet" media="only screen and (min-width:750px)" href="css/stylesheet.css"> <!-- PC screens-->
-		<link rel="stylesheet" media="only screen and (max-width:750px)" href="css/stylesheetmobile.css"> <!-- Phone screens -->
+		<link rel="stylesheet" href="css/stylesheet.css"> <!-- PC screens-->
+		<!-- <link rel="stylesheet" media="only screen and (max-width:750px)" href="css/stylesheetmobile.css"> Phone screens -->
 		<link rel="shortcut icon" href="image/logo-wp.ico"> <!-- I put my tiny logo next to the tab bar that will appear in some browsers (like chrome)-->
 	</head>
 		
 	<body>
 		<header> <!-- This is the header for every site-->
 			<div id="header-area"> <!-- The header does not have any sophisticated components, other than the logo in the center. I did not announce its size since everything will be styled in my 2 stylesheets-->
-				<img onclick="window.location.href='about.html'" id="header-logo" src="image/logo-wp.png" alt="sappy-logo">
-				<!-- The onclick attribute makes this image of the logo perform like a button. Clicking on the logo will direct
-				the user to "about.html" page, to know more about me -->
+				<nav> <!-- This is the navigation bar, including all the navigating buttons. Yes, I have decided to make them as buttons, not just anchor links. Personally I found styling buttons easier than div blocks nesting anchor tags-->
+					<!-- Onclick attribute works the same way as the header-logo element above -->	
+					<button style="background-color: #bda5b1;" class="menu-button" onclick="window.location.href='index.html'">Home</button>
+					<button class="menu-button" onclick="window.location.href='index.html#banner-holder'">Projects</button>
+					<button class="menu-button" onclick="window.location.href='about.html'">Digital Design</button>
+				</nav>	
 			</div>	
 		</header>	
 
-		<nav> <!-- This is the navigation bar, including all the navigating buttons. Yes, I have decided to make them as buttons, not just anchor links. Personally I found styling buttons easier than div blocks nesting anchor tags-->
-			<!-- Onclick attribute works the same way as the header-logo element above -->	
-			<button style="background-color: #21d89e;" class="menu-button" onclick="window.location.href='index.html'">Home</button>
-			<!-- The styling rule above will change through every pages. The styling changes the background colour of this butoon to a different 
-			colour compares to other buttons, indicating the webpage that the user is currently on-->	
-			<button class="menu-button" onclick="window.location.href='about.html'">About Me</button>
-			<button class="menu-button" onclick="window.location.href='info.html'">Information</button>
-					
-		</nav>	
 		<br/> <!-- You will see me use this "line break" tag quite a lot, this is the easier way to space out elements, in addition to the margin
 		and padding announced in the stylesheet files -->
 		
-		<div class="entry-block" id="eb1" >
+		<div class="entry-block banner" id="eb1" >
 			<!-- The entry banner, this is one out of 3 entrance banners that exist on this website. For noting purpose, I have breached the rule
 			of "putting images in-line with text" underneath. However, this is how I utilize animated GIF to allow me to do the visual fx that
 			I have not yet able to implement. Basically, next to "This is" text, there will be a changing logo with glitching effect, constantly
 			switching between the word "ME" and my logo, which is presented in most places. With onclick attribute, clicking on it will direct
 			you to about page, like the logo in the header-->
-			<h1 id="entry"> This is&nbsp;<img onclick="window.location.href='about.html'" id="id-img" src="image/logolas.gif" alt="logo"></h1>
+			<h1 style="background-color: #000000a4" id="entry"> This is&nbsp;<img onclick="window.location.href='about.html'" id="id-img" src="image/logolas.gif" alt="logo"></h1>
 		</div> 
 
 
 		
 		<main> <!-- This is the main part of the webpage, and pretty much the same as any other webpages in this site -->
-			<div id="index-content" > <!-- To differentiate different main blocks, I have IDed each one of them. This block is named "index-content"
+			<div id="index-content" class="banner"> <!-- To differentiate different main blocks, I have IDed each one of them. This block is named "index-content"
 				which will be affected by the styling that has the selector #index-content in the css files. -->
 				<h2 class=" mcon title"><a href="documents/TungNguyen_CV.pdf">a brief about me.</a></h2>
 				<!-- Some clarification on the class I have named here. All styling can be seen in the stylesheets with the classes announced:
@@ -67,61 +61,63 @@ See below for more details -->
 
 				<p class="text content-text mcon">As a third-year Information and Communication Technology Bachelor's student at the Swinburne
 					University of Technology with a background in IT and business information systems, I aspire to learn
-					more about Information Systems, the exploration of data and how such processes provide value to many
-					existing and up-and-coming businesses.<br><br>
-					However, I also spend my time and effort looking into the field of graphical design, and where that might collide with ICT, in order to bring
-					both fields' skillsets into effective use.
-					Being an international student also bring certain hardships to my effort to gain a place in the Australian's workforce, but by being a hard-worker,
-					curious, self-discipline and a problem solver, I yearns to achieve more.
+					more about the realms of Data Analytics, its applications in Business Intelligence and how such processes impact decisions and generate values.<br><br>
+					I also spend my time and effort looking into the field of graphical design, and where that might collide with ICT, in order to bring
+					my skillsets from both fields into effective use.
+					Being an international student also bring certain hardships to my effort to gain a place in the Australian's workforce, but by diligently explore,
+					self-discipline and have a never-give-up attitude, I learn more and more from my mistakes.
 				</p> 
 			</div>	
 			<!-- Aside contents are underneath, which is all IDed for further styling. This is where I used unordered list tags to briefly introduce myself
 			There are two aside blocks in this section, but I decided to make them float underneath the index-content boxes, rather than floating next to it.-->
-			<aside id="aside-one" class="mcon">
+			<div id="aside-one" class="mcon">
 				<img id="portrait" src="image/me.jpg" alt="my face"> <!-- Literally my face, as you can see in the webpage -->
 				<ul id="content-list">
-					<li class="text" ><strong style="color:#49967d">Name:</strong>Tung Duc Nguyen</li>
-					<li class="text"><strong  style="color:#49967d">DOB:</strong> 14/03/2002</li>
-					<li class="text"><strong  style="color:#49967d">Nationality:</strong> Vietnamese</li>
-					<li class="text"><strong  style="color:#49967d">Related Field:</strong> Information & Communication Technology/ Information Systems</li>
-					<li class="text"><strong  style="color:#49967d">Interests:</strong> Digital Graphic Design, Problem Solving, Database Management (<a href="about.html#hobby">more</a>)</li>
-					<li class="text"><strong  style="color:#49967d">Proficient languages:</strong> Vietnamese, English</li>
+					<h2 style="padding: 0; margin: 0;">Tung Duc Nguyen <span style="font-size: small;">(He/Him)</span></h2>
+					<br/>
+					<li class="text"><strong  style="color:#A78295">DOB:</strong> 14/03/2002</li>
+					<li class="text"><strong  style="color:#A78295">Nationality:</strong> Vietnamese</li>
+					<li class="text"><strong  style="color:#A78295">Relevant Field:</strong> Information & Communication Technology (Business Systems)</li>
+					<li class="text"><strong  style="color:#A78295">Interests:</strong> Graphic Design, Database Design & Management, Data Analytics & Visualisation.
 				</ul>	
-			</aside>
-<!-- 
-			<aside id="aside-two" class="mcon">
-				<div class="text" id="quote">
-				<p> My motto for life:</p>
-				<q style="font-size:larger; color:yellow;">Always try your best. Only then you would be happy with what you get in the aftermath. I strive </q>
-				</div>
+			</div>
 
-
-			</aside> -->
 		</main>	
-		
-
-		<div id="banner-one"> <!-- This is banner one section that I have mentioned on the top. It 
-			was first named "banner one" for expandability purposes, but I have not put any other side banner, except for this one.-->
-			<div id="ban-title">
-				<h1 class="title">My first real client project: </h1>
-				<p class="text">In this project, I have actively contributed to the design, branding and layout of the website, as well as the branding for our team "Web Ninja"</p>
-				<button class="text banner-button" id="nation-link" 
-				onclick="window.open('documents/tree_proof.pdf')">Learn more</button>
+		<div id="banner-holder" class="banner">
+			<div style="margin:0% 2% 0% 2%; "><h2>My Projects</h2></div>
+			<div id="banner-three" class="banner"> <!-- This is banner one section that I have mentioned on the top. It 
+				was first named "banner one" for expandability purposes, but I have not put any other side banner, except for this one.-->
+				<div id="ban-title" class="backdrop banner">
+					<h1 style="color: black;">D3.js Data Visualisation Team Project</h1>
+					<p style="color: black;" class="text">A High-Distinction Interactive Internal Displacement & Migration Pattern visualisations project by Tevy Tunsay & Tung Nguyen.</p>
+					<button class="text banner-button" id="nation-link" 
+					onclick="window.open('https:\/\/s4ppyh4t.github.io/id-mp-2023/')">GitHub Page</button>
+				</div>
 			</div>
-			 
+			
+			<div id="banner-two" class="banner"> <!-- This is banner one section that I have mentioned on the top. It 
+				was first named "banner one" for expandability purposes, but I have not put any other side banner, except for this one.-->
+				<div id="ban-title" class="backdrop banner">
+					<h1 class="title">Tableau Visualisation Projects</h1>
+					<p class="text">Two Data Visualisation projects exploring 2020-2022 Victorian Real Estate Market dataset and performing RFM Analysis on Tableau's default "Global Superstore" dataset.</p>
+					<button class="text banner-button" id="nation-link" 
+					onclick='window.open("https:\/\/public.tableau.com/views/tdn_rptA_dump_tblu_s12023/1-DensityofListingsinRegions?:language=en-GB&:display_count=n&:origin=viz_share_link")'>Victoria's RE Market</button>
+					<button class="text banner-button" id="nation-link" 
+					onclick="window.open('https:\/\/public.tableau.com/views/tute_w6/Dashboard1')">RFM Analysis</button>
+				</div>			 
+			</div>
 
+			<div id="banner-one" class="banner"> <!-- This is banner one section that I have mentioned on the top. It 
+				was first named "banner one" for expandability purposes, but I have not put any other side banner, except for this one.-->
+				<div id="ban-title" class="backdrop banner">
+					<h1>Christmas Tree Elves' Project </h1>
+					<p class="text">Real-client project involves the development of a website solution using WordPress platform and live hosting.</p>
+					<button class="text banner-button" id="nation-link" 
+					onclick="window.open('documents/tree_proof.pdf')">Learn more</button>
+				</div>
+			</div>
 		</div>
 
-		<div id="banner-two"> <!-- This is banner one section that I have mentioned on the top. It 
-			was first named "banner one" for expandability purposes, but I have not put any other side banner, except for this one.-->
-			<div id="ban-title">
-				<h1 style="color: black;" class="title">My digital graphic designs </h1>
-				<button style="color: black;" class="text banner-button" id="nation-link" 
-				onclick="window.location.href='about.html#achievements'">Learn more</button>
-			</div>
-			 
-
-		</div>
 
 		<aside> <!-- This is the nice feature that I want to add in my website: the "back to top" button
 			Essentially it uses onclick attribute to navigate the user to the header area on each webpage
@@ -138,18 +134,23 @@ See below for more details -->
 					<h3 style="font-size:larger">Thank you for visiting this site!</h3>
 					<p>Click here to go back up</p>
 			</div>
-			<!-- I use the class claim to classify all texts that are either copyright claims or my notes for the website. 
-			They are styled to be small and less attention catching, but clear enough to be readable-->
-			<div class="text claim">
-				<q><em>Most of the media used in this website is owned by SAPPYHAT, pseudo name for Tung Nguyen.
-					To check out which elements are not owned by SAPPYHAT, go to page "Information". Thank you!</em></q>
+			<hr style="width: 80%"/><br>
+			<div class="social-links">
+				<button style="align-items: center;" class="menu-button" onclick="window.open('https:\/\/www.linkedin.com/in/tungnguy3n/', '_blank')">
+				  LinkedIn
+				</button>
 
+				<button style="align-items: center;" class="menu-button" onclick="window.location.href='mailto:td.nguyen3320@gmail.com'">
+					Email
+				</button>
+				
+				<button style="align-items: center;" class="menu-button" onclick="window.open('https:\/\/public.tableau.com/app/profile/tung.nguyen8686', '_blank')">
+					Tableau Public
+				</button>
 			</div>
 
 				
 		</footer>
-	
-	
 	
 	<!-- And that's the end of this webpage. Other pages will have somewhat similar comments due to
 		the consistency of the website, as some elements will be featured in the same way amongst all pages-->

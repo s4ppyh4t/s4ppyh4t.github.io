@@ -8,14 +8,18 @@ _____                   _   _                                _____  _____  _____
                   __/ |         __/ |       __/ |                                      
                  |___/         |___/       |___/      /CSS - PC/                                   
 ****/
-/* In this design I took inspiration from "The Matrix" design style
+/* In this design I took inspiration from "The Matrix"
 with green and black as main colours, providing a futuristic, neon and cyber-like
 look, expressing my own kind of style. This is what I want to present in my website*/
 /* you may have noticed that I used many types of relative scaling units underneath, with the
 introduction of vw, that scales the elements based on the size of your viewport, or screen*/
 /***** general settings ****/
 html{
-    background-color:rgb(0, 0, 0);
+    font-family:'Poppins';
+    background-color:#331D2C;
+    min-width: 1020px;
+    /* max-width: 2048px; */
+    /* background-image: linear-gradient(to right, #3dc89c,#49967d, #22e4a7);     */
     scroll-behavior: smooth; /*THIS IS AN IMPORTANT STYLING ATTRIBUTE IN THE WEBPAGE. With just this line of code
     I could make any scrolling action (from anchoring, to user scrolling) "smooth". This means that when you click on
     a navigational anchor on the page that directs you to a different section in the SAME PAGE, the browser
@@ -24,13 +28,13 @@ html{
 }
 
 hr{
-    border: 2px dashed #49967d;
+    border: 2px dashed #EFE1D1;
 }
 /* This makes the highlighting color turns green, when viewer wants to highlight the text on my websites*/
 ::selection {
     color: white;
     background: #49967d;
-  }
+}
 
   /*The part underneath styles the scroll bar to fit the theme of the website*/
     /* width */
@@ -56,32 +60,32 @@ hr{
 /* Every texts in the website, by default, are in whitesmoke colors, with a monospace font and font size as below*/  
 .text{
     color:whitesmoke;
-    font-family:monospace;
+    font-family:'Poppins';
     font-size:1.7vw;
 }
 
 
 h1{
     color:whitesmoke;
-    font-family:monospace;
+    /* font-family:monospace; */
     font-size:4vw;
 }
 
 h2{
     color:whitesmoke;
-    font-family:monospace;
+    /* font-family:monospace; */
     font-size: 3vw ;
 }
 
 h3{
     color:whitesmoke;
-    font-family:monospace;
+    /* font-family:monospace; */
     font-size: 2vw ;
 }
 
 
 a{
-    color:rgb(254, 241, 51);
+    color:#EFE1D1;
 }
 
 a:hover{
@@ -103,35 +107,20 @@ a:hover{
 
 
 /* header and navigation bar starts */
+#header-area{
+    background-color: hsla(304, 16%, 21%, 0.8);
+    border-radius: 3vw;
+    margin: 0% 5% 0% 5%;
+}
 
-header{
-    background-color :black;
-    background-image: linear-gradient(to right, #3dc89c,#49967d, #22e4a7);
+#header-area nav{
+    /* background-color :black; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     text-align :center;  
     height:40%;
-    margin-bottom:1% ;
-}
-
-#header-logo{
-    overflow:hidden;
-    animation: entrance 2s;
-    transition: transform .3s;
-    height:8%;
-    width:8%;
-    /*If the logo turns too big in scale, it will automatically be hidden from the view*/
-}
-
-#header-logo:hover{
-    transform: translatex(-25px);
-}
-/*Cool entrance animation and hover animation for the logo, as it move
-and turns from the top (out of frame), to its correct position (in frame).
-The hovering animation translate the logo to the left, a little bit, to create some kind of a 
-nudging notification for the user, indicating that it is clickable. (its not gonna be introduced on mobile)*/
-@keyframes entrance{
-    0%{transform: rotate(180deg) translatey(200px);opacity:0;}
-    75%{transform:translatey(0px);}
-    100%{transform: rotate(0deg);opacity:1;}
+    /* width: 80%; */
 }
 
 nav{
@@ -155,9 +144,9 @@ nav div{
     border:none;
     color:white;
     font-size:1.5vw;
-    font-family:monospace;
-    border-radius:6vw;
-    background-color:#49967d;
+    /* font-family:monospace; */
+    border-radius:2vw;
+    background-color:transparent;
     transition: transform .3s;
     overflow: auto; /*in case the text in the button gets too large, the button will automatically expands to contain the text, rather than letting it spilled outside*/
     
@@ -165,7 +154,7 @@ nav div{
 /*hover animation for menu buttons*/
 .menu-button:hover {
     transform: translateY(5px);
-    background-color:#21d89e;
+    background-color:#A78295;
 }
 /************ header and navigation bar ends **************/
 
@@ -189,8 +178,10 @@ nav div{
 /* Main page's banner background pic */
 #eb1{
     background-image:url("../image/banner_bg.gif");
+    /* padding: 2vw; */
     background-repeat: repeat-x;
-    background-size: auto;
+    background-size: 50%;
+    /* border: 1px solid white; */
     background-position:cover;/* the two lines above allow us to control how the background-image of the components will display*/
 }
 /*same thing applies to the two components below*/
@@ -250,6 +241,12 @@ a GIF file that I made, which is styled here to fit the heading text in the entr
     transform: translateY(10px);
 }
 
+#index-content, #hobby, #achievements{
+    /* border: 0.25vw #EFE1D1 solid; */
+    background-color: hsla(304, 16%, 21%, 0.8);
+    border-radius: 3vw;
+    padding: 2%;
+}
 /************ entry ends **************/
 
 
@@ -286,8 +283,8 @@ and not styled in any fancy way (sorry abt that)*/
 the main area of each webpage*/
 main{
     margin:2% 5% 2% 5%;
-    border:0.5vw dashed #49967d;
-    padding:2%;
+    /* border:0.5vw dashed #49967d; */
+    /* padding:2%; */
     overflow:auto;
 }
 
@@ -300,10 +297,7 @@ main{
 
 .mcon{
     margin-top:2%;
-}
-
-.title{
-    color:#10feb3;
+    background-color
 }
 
 
@@ -343,35 +337,40 @@ main{
     width:17%;
     height:auto;
     float:left;
-    border:1px solid #49967d;
+    /* border:1px solid #EFE1D1; */
+    border-radius: 3vw;
     object-fit: cover;
     /*my face*/
 }
 
 #content-list{
-    float:left;
     margin:0;
-    width:75%;
+    width:80%;
+    text-align: justify;
+    list-style-type: none;
+
 }
 /*aside one and two are parts of the Home Page tabs that show my motto and face*/
 #aside-one{
-    float:left;
-    width:90%;
-    border:2px solid #49967d;
-    padding:1% 1% 2% 1%;
-    margin: 2% 3.5%;
+    display: flex;
+    /* width:90%; */
+    /* border:0.25vw solid #EFE1D1; */
+    background-color: hsla(304, 16%, 21%, 0.8);
+    border-radius: 3vw;
+    padding:2%;
+    /* margin: 2% 3.5%; */
 }
 
 #aside-two{
     float:right;
     width:42%;
-    border:2px solid #49967d;
-    padding:1% 2% 2% 2%;
+    border:2px solid #EFE1D1;
+    padding:2%;
 }
 
 /*aside three is the gallery in About page*/
 #aside-three{
-    border:0.5vw dashed #49967d;
+    border:0.5vw dashed #EFE1D1;
     margin:2% 5% 2% 5%;
     padding:1% 2% 2% 2%;
     overflow:auto;
@@ -381,31 +380,30 @@ main{
     width:300px;
     height:300px;
     object-fit:cover;	
+    margin: 0;
 }
-#gal01{
-    overflow:scroll;
-    height:30vw;
-    border:2px solid #49967d;
-    margin:0% 13% 0% 13%;
-    }
+
+table {
+    margin: 0;
+    padding: 0;
+}
 
 #gal02{
-    overflow:scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    align-items: center;
     height:40vw;
-    border:2px solid #49967d;
-    margin:0% 13% 0% 13%;
+    width: 68vw;
+    padding:0;
+    border-radius: 3vw;
+    border: 0.25vw solid hsla(303, 28%, 29%, 0.8);
+    background-color: hsl(307, 29%, 12%);
+    margin:auto;
 }    
 
 .gallery table{
     text-align:center;
     margin :auto;
-}
-
-#aussie-pic{
-    width:200px;
-    height:200px;
-    object-fit:cover;	
-    float:left;
 }
 /********* main edit ends ************/
 
@@ -421,26 +419,55 @@ main{
 decided to put it into a distinct area, since I can update more banners in
 the future if I want to (and no, this is not the entry banner)*/
 #banner-one{
-    margin:0% 5% 2% 5%;    
+    margin:0% 2% 2% 2%;    
     background-image:url("../image/proof1.png");
-    background-size: cover;
+    background-size: 110%;
     background-position: center;
-    
-
-    /* background-position: center; */
+    /* height: 32vw; */
+    flex:1;
+    /* border: 1px solid white; */
 }
 
 #banner-two{
-    margin:0% 5% 2% 5%;    
-    background-image:url("../image/blurbruh.png");
+    margin:0% 2% 2% 2%;   
+    background-image:url("../image/tableau.png");
     background-size: cover;
     background-position: center;
+    /* height: 32vw; */
+    flex:1;
+}
+
+#banner-three{
+    margin:0% 2% 2% 2%;    
+    background-image:url("../image/d3.png");
+    
+    background-size: cover;
+    background-position: center;
+    /* height: 32vw; */
+    flex:1;
+}
+
+.banner {
+    border-radius: 3vw;
+}
+
+#banner-holder{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(100, 100, 100, 0.166);
+    margin:0% 5% 2% 5%; 
+}
+
+.backdrop{
+    backdrop-filter: blur(5px);
+    background-color: rgba(100, 100, 100, 0.166);
 }
 
 #ban-title{
     padding-top:5%;
     padding-bottom:5%;
     padding-left:5%;
+    padding-right:5%;
     text-align:left;
     font-size:4vw;
     color: white;
@@ -448,15 +475,15 @@ the future if I want to (and no, this is not the entry banner)*/
 }
 
 .banner-button{
-    background-color:transparent;
-    font-family:monospace;
+    background-color:#A78295;
+    /* font-family:monospace; */
     border-radius:10px;
     border:2px solid whitesmoke;
     transition: transform .3s;
 }
 
 .banner-button:hover {
-    background-color:#49967d;
+    background-color:#917985;
     transform: translateY(5px);
 }
 
@@ -601,7 +628,7 @@ footer{
 
 #footer-text{
     font-size:1.75vw;
-    font-family:monospace;
+    /* font-family:monospace; */
     text-align: center;
     width:70%;
     animation: color-change-foot 5s infinite;
@@ -648,3 +675,24 @@ footer{
 }
 
 /******* footer ends ********/
+
+
+/* --------- Additional Styling ---------- */
+.quick-flex{
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+iframe{
+    flex: 1;
+}
+
+.social-links{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+    font-size: large;
+}

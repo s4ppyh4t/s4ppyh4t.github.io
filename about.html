@@ -11,7 +11,7 @@ See below for more details -->
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>SAPPYHAT - About Me</title>
+		<title>Digital Design Interests</title>
 		<meta name="description" content="Tung Nguyen Website 2023">
 		<meta name="author" content="Tung N">
 		<meta name="keyword" content="sappyhat">
@@ -24,83 +24,54 @@ See below for more details -->
 	<body>
 		<header> <!-- This is the header for every site-->
 			<div id="header-area"> <!-- This section is exactly like the the one in index page, or every page-->
-				<img onclick="window.location.href='about.html'" id="header-logo" src="image/logo-wp.png" alt="sappy-logo">
-				<!-- The onclick attribute makes this image of the logo perform like a button. Clicking on the logo will direct
-				the user to "about.html" page, to know more about me -->	
-			</div>	
-		</header>	
-	
-		<nav> <!-- This is the navigation bar, including all the navigating buttons. Yes, I have decided to make them as buttons, not just anchor links. Personally I found styling buttons easier than div blocks nesting anchor tags-->
-			<div>
-				<button class="menu-button" onclick="window.location.href='index.html'">Home</button>
-				<button style="background-color: #21d89e;" class="menu-button" onclick="window.location.href='about.html'">About Me</button>
-				<!-- The button above lights up, indicating that the user is in "About" page -->
-				<button class="menu-button" onclick="window.location.href='info.html'">Information</button>
-			</div>		
-		</nav>	
+				<nav> <!-- This is the navigation bar, including all the navigating buttons. Yes, I have decided to make them as buttons, not just anchor links. Personally I found styling buttons easier than div blocks nesting anchor tags-->
+					<button class="menu-button" onclick="window.location.href='index.html'">Home</button>
+					<button class="menu-button" onclick="window.location.href='index.html#banner-holder'">Projects</button>
+					<button style="background-color: #bda5b1;" class="menu-button" onclick="window.location.href='about.html'">Digital Design</button>
+					<!-- The button above lights up, indicating that the user is in "About" page -->
+				</nav>	
+		</header>			
 		<br/>
 		
 		
-		<div class="entry-block" id="eb3" > <!-- This is the third, and the final entrance block in the whole webpage-->
-			<h1 id="entry" style="color: #21d89e;"> My capabilities </h1>
+		<div class="entry-block banner" id="eb3" > <!-- This is the third, and the final entrance block in the whole webpage-->
+			<h1 id="entry" style="color:#f7c3fa; background-color: #000000a4;"> Digital Design Interests </h1>
 		</div> <!-- THe purpose of the heading block above is similar to the index page's one, but since you are
 				already in the "About page", there is no need for the hyperlink in "onclick" attribute to work anymore-->
 		
-		<nav class="internal-navigation">
-			<!-- THis is the newly introduced element/section, the "internal-navigation" list
-			as it is hard to navigate through a really long page, with a long content, it is good to have 
-			a navigation bar, or an interactive index to go through different sections listed in it
-			
-			This navigation list will take you through many parts of the website. (3 to be specific)-->
-			<h2>In this section, you will learn about:</h2>
-			<ol class="navigation-list">
-				<li class="text"><a href="#hobby">My interests</a></li>
-				<li class="text"><a href="#achievements">My design works</a></li>
-			</ol>	
-		</nav>
-		
 		<main> <!-- This is probably the longest main section in the whole website-->
-			<section id="hobby" class="mcon"> <!-- sections are now being contained in actual section tags, with each of them IDed accordingly
-			to help me with the styling part-->
-				<!-- Here are the explanation to the classes that I used underneath:
-				1. mcon: short for main content, this indicates each block that are nested in the main component (like nation-content)
-				2. text: are the generic class for every blocks that have texts in it. This will be used mainly to decide the font colour and family
-				3. content-text: this defines the text sits inside a content blocks.
-				4. title: This defines the title of every content "block", which should appear differently
-				t. hobby-list: this basically is grouping method that I used on the two ordered lists-->
-				
-				<h2 class="content-text mcon title">My interests</h2>
-				<br/>
-				<p class="text content-text mcon">I have devoted my life to the world of ICT, but my interests lies within the realm of digital graphical design.
-					Designing brings great prospect to my creation, and throughout the years of practicing and creating, I began to get familiarised with the industrial toolsets
-					Below is an example of a presentation animation made by me, using Adobe Illustrator and After Effect.
+			<section id="hobby" class="banner">
+
+				<h2 class="mcon">L'Oréal Brandstorm 2023 Participation</h2>
+				<p class="text content-text">I and other two members from Swinburne University of Technology participated in L'Oréal's BRANDSTORM 2023 competition, where we utilised our knowledge within the field of technology to "have a crack at" a marketing competition. While helding low expectations, we aimed to produce an original, blockchain-driven and sustainable conceptual project. Thanks to Canva's Creative platform, we have produced a neat, eye-catching and informative creative pitch.
 					
 				</p>
 				
 				<br/>
-				<!-- The iframe element, this is used to embed a YouTube video into the body of the website. This part of code is copied directly from YouTube-->
-				<iframe id="yt-vid" width="220" height="385" src="https://www.youtube.com/embed/l2yh0-d89_w" title="LOREAL BRANDSTORM 2023 Export Animation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<div class="quick-flex">
+					<!-- The iframe element, this is used to embed a YouTube video into the body of the website. This part of code is copied directly from YouTube-->
+					<iframe id="yt-vid" width="385" height="385" src="https://www.youtube.com/embed/l2yh0-d89_w" title="LOREAL BRANDSTORM 2023 Export Animation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					<iframe id="yt-vid" width="385" height="385" src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFbcZQng8Q&#x2F;view?embed" title="LOREAL BRANDSTORM 2023 Export Animation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					<!-- <img id="cert-view" src="image/cert-01.png" height="385"></img> -->
+				</div>
 				<br/>
-				
 				<p class="text content-text mcon">	
-					The following gallery is a representation of the <a href="#gal02">digital artwork designs on my computer</a>: <!-- Anchor to the gallery below-->
-				</p>	
-				<br>		
-				<br>		
+					Link to the team's final creative pitch on <a target="_blank" href="https://www.canva.com/design/DAFbcZQng8Q/goYoSF6y_7HIM7jGMfLEEw/view?utm_content=DAFbcZQng8Q&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink2">Canva</a>.
+				</p>		
 				
 			</section>
 			<!-- One class that I forgot to mentioned above: "mobile-content". This defines the content that will only 
 			appear on the screen when a "mobile display" is detected by the browser. One of the main differences that 
 			appears on my website. The styling of it will be explained in the stylesheets-->
-			<br/><hr><p class="text mobile-content">Drag this to get through this section</p><hr/>
+			<br/><p class="text mobile-content">Drag this to get through this section</p>
 
-			<section id="achievements" class="mcon">
+			<section id="achievements" class="mcon banner">
 					
 					<h2 class="content-text mcon title">Digital Design Gallery</h2>
 					<br/>
 					<br/>
 				
-					<p class="text content-text mcon">These are some of my digital design projects. There are only a few of them presented, but I hope it could portray what is needed for my purpose. Click on individual images to view in full-size!
+					<p class="text content-text mcon">While I have devoted my life to the works of ICT, a portion of my heart belongs to graphical design. I am passionate to create and to govern the "beauty" aspects of digital creation. Such love has driven myself throughout the years of self-taught practices, and brought me to where I am now.
 					</p>
 					<br/><br/>
 						<!-- Gallery of similar style as the one in index page, check out index page's source code to see more -->
@@ -122,13 +93,19 @@ See below for more details -->
 									  <td><img onclick="window.open('image/gal-2/art08.gif')" src="image/gal-2/art08.gif" alt="yes" class="gl-image"></td>
 									  <td><img onclick="window.open('image/gal-2/art10.png')" style="background-size:auto" src="image/gal-2/art10.png" alt="yes" class="gl-image"></td>
 								</tr>
+								<tr id="row4">
+									<td><iframe src="https://www.youtube.com/embed/hE6ew9KnsaM" class="gl-image"></iframe></td>
+									<td><iframe src="https://www.youtube.com/embed/9Mk_alESJDQ?start=6" class="gl-image" allow="autoplay"></iframe></td>
+									<td><img onclick="window.open('image/gal-2/art14.png')" style="background-size:auto" src="image/gal-2/art14.png" alt="yes" class="gl-image"></td>
+
+								</tr>
 								
 								
 							</tbody>	
 							</table>
 						</div> <!-- Check footer to know what "claim" class means-->
 						<p class="text claim">Courtesy of Tung Nguyen - 2023</p>
-						<p class="text claim" style="color:red"><strong>Some images are large in size. You may encounter jitters upon loading</strong></p>
+						<p class="text claim" style="color:red"><strong>Some images are large in size. Buffering expected.</strong></p>
 							
 			</section>
 		</main>	
@@ -141,23 +118,29 @@ See below for more details -->
 
 
 		<footer>
-			<!-- I use the class claim to classify all texts that are either copyright claims or my notes for the website. 
-				They are styled to be small and less attention catching, but clear enough to be readable-->
 			<!-- Initially this is the "back to top" button, but after I figure out how to use the fixed button
 			like above, this seems to be obsolete. However, this is not the case as this would still be a
 			backup option in case the previous button does not work. It also has a clear presentation and bright 
 			colour, easily assessible to all users -->
 			<div onclick="window.location.href='#header-area'" id="footer-text">
-				<h3 style="font-size:larger">Thank you for visiting this site!</h3>
-				<p>Click here to go back up</p>
-		</div>
-		
-		<div class="text claim">
-			<q><em>Most of the media used in this website is owned by SAPPYHAT, pseudo name for Tung Nguyen.
-				To check out which elements are not owned by SAPPYHAT, go to page "Information". Thank you!</em></q>
+					<h3 style="font-size:larger">Thank you for visiting this site!</h3>
+					<p>Click here to go back up</p>
+			</div>
+			<hr style="width: 80%"/><br>
+			<div class="social-links">
+				<button style="align-items: center;" class="menu-button" onclick="window.open('https:\/\/www.linkedin.com/in/tungnguy3n/', '_blank')">
+				  LinkedIn
+				</button>
 
-		</div>
-	
+				<button style="align-items: center;" class="menu-button" onclick="window.location.href='mailto:td.nguyen3320@gmail.com'">
+					Email
+				</button>
+				
+				<button style="align-items: center;" class="menu-button" onclick="window.open('https:\/\/public.tableau.com/app/profile/tung.nguyen8686', '_blank')">
+					Tableau Public
+				</button>
+			</div>
+
 				
 		</footer>
 		
