@@ -1,22 +1,32 @@
 <!DOCTYPE html><html lang="en" data-astro-cid-ouamjn2i> <head><meta name="content-type" charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Astro v4.16.14"><link rel="icon" href="/favicon.ico" type="image/x-icon"><style data-astro-transition-persist="astro-flkhkp3x-1">:root { --source-color: #235d59;} :root.mt-dark {--primary: #81d5ce;--onPrimary: #003734;--secondary: #b0ccc9;--onSecondary: #1c3533;--tertiary: #b0c9e7;--onTertiary: #18324a;--primaryContainer: #00504c;--onPrimaryContainer: #9df2ea;--secondaryContainer: #324b49;--onSecondaryContainer: #cce8e5;--tertiaryContainer: #304962;--onTertiaryContainer: #d0e4ff;--error: #ffb4ab;--onError: #690005;--errorContainer: #93000a;--onErrorContainer: #ffdad6;--surfaceDim: #0e1514;--surface: #0e1514;--surfaceBright: #343a3a;--surfaceContainerLowest: #090f0f;--surfaceContainerLow: #161d1c;--surfaceContainer: #1a2120;--surfaceContainerHigh: #252b2a;--surfaceContainerHighest: #2f3635;--onSurface: #dde4e2;--onSurfaceVariant: #bec9c7;--outline: #889391;--outlineVariant: #3f4947;--inverseSurface: #dde4e2;--inverseOnSurface: #2b3231;--inversePrimary: #006a65;--shadow: #00000030;--scrim: #00000030;} :root {--primary: #006a65;--onPrimary: #ffffff;--secondary: #4a6361;--onSecondary: #ffffff;--tertiary: #48607b;--onTertiary: #ffffff;--primaryContainer: #9df2ea;--onPrimaryContainer: #00504c;--secondaryContainer: #cce8e5;--onSecondaryContainer: #324b49;--tertiaryContainer: #d0e4ff;--onTertiaryContainer: #304962;--error: #ba1a1a;--onError: #ffffff;--errorContainer: #ffdad6;--onErrorContainer: #93000a;--surfaceDim: #d5dbda;--surface: #f4fbf9;--surfaceBright: #f4fbf9;--surfaceContainerLowest: #ffffff;--surfaceContainerLow: #eff5f3;--surfaceContainer: #e9efed;--surfaceContainerHigh: #e3e9e8;--surfaceContainerHighest: #dde4e2;--onSurface: #161d1c;--onSurfaceVariant: #3f4947;--outline: #6f7978;--outlineVariant: #bec9c7;--inverseSurface: #2b3231;--inverseOnSurface: #ecf2f0;--inversePrimary: #81d5ce;--shadow: #00000030;--scrim: #00000030;}</style><script>
-            const isDarkMode = window.localStorage.getItem("DARK_MODE") === "1";
+            const themeMode = () => window.localStorage.getItem("DARK_MODE");
+            const preferDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+
             function setDarkMode() {
-                isDarkMode
+                (themeMode() === "1" || (themeMode() === "2" && preferDarkMode.matches))
                     ? document.documentElement.classList.add("mt-dark")
-                    : null;
+                    : 0;
             }
             function setIconMode() {
-                !isDarkMode
+                themeMode() === "1"
                     ? document
                         .querySelector(".u-selThemeSymbol")
                         .setAttribute("xlink:href", "#theme-dark")
-                    : null;
+                    : themeMode() === "2"
+                    ? document
+                        .querySelector(".u-selThemeSymbol")
+                        .setAttribute("xlink:href", "#theme-auto")
+                    : 0;
             }
+            preferDarkMode.addEventListener('change', () => {
+                themeMode() === "2" ? document.documentElement.classList.toggle("mt-dark") : 0;
+            });
+            
             window.addEventListener("DOMContentLoaded", setIconMode);
             setDarkMode();
         </script><title>Tung Nguyen | Home</title><style>div[data-astro-cid-r4ru73ep].o-heroOuterBlock{height:inherit;width:auto;margin:auto;position:relative;z-index:3}div[data-astro-cid-neegqouy].o-matrixOuterContainer{height:100%;margin:0;overflow:hidden;position:relative}div[data-astro-cid-neegqouy].u-maskStyleContainer{position:relative;height:inherit}div[data-astro-cid-neegqouy].m-matrixMaskContainer{-webkit-mask-position:50% 50%;-webkit-mask-repeat:no-repeat;-webkit-mask-size:var(--matrix-mask-width);mask-repeat:no-repeat;mask-position:50% 50%;mask-size:var(--matrix-mask-width);mask-mode:luminance;overflow:hidden;height:inherit;width:inherit;display:flex;align-items:center;justify-content:center}div[data-astro-cid-neegqouy].a-matrixTextContainer{display:flex;flex-direction:row;align-items:center;justify-content:center;width:calc(var(--matrix-mask-width) * 2);height:80%;opacity:1}div[data-astro-cid-neegqouy].a-matrixTextContainer.a-matrixTextContainer__left{animation:calc(var(--matrix-animation-duration) + 5s) linear infinite scroll-for-left;opacity:.6}div[data-astro-cid-neegqouy].a-matrixTextContainer.a-matrixTextContainer__right{animation:var(--matrix-animation-duration) linear infinite scroll-for-right;margin-top:calc(var(--matrix-vert-displace) * 1em)}div[data-astro-cid-neegqouy].a-matrixTextContainer .a-matrixText[data-astro-cid-neegqouy]{height:inherit;pointer-events:none;color:var(--onSurface);font-family:monospace;line-height:var(--matrix-vert-displace);inline-size:80ch;word-break:break-all}.a-matrixTitleBlock[data-astro-cid-neegqouy]{display:flex;flex-direction:column;justify-content:space-between;align-items:center;overflow:hidden;width:100%;height:72%;margin:auto;position:absolute;bottom:18%;left:0}.a-matrixTitleBlock[data-astro-cid-neegqouy] span[data-astro-cid-neegqouy]{text-align:center}.a-matrixTitleBlock[data-astro-cid-neegqouy]>.a-mainTitle[data-astro-cid-neegqouy]{font-family:var(--root-font-family);width:100%;color:var(--onSurface);display:flex;flex-direction:column;align-items:center;font-size:var(--font-size-title)}.a-matrixTitleBlock[data-astro-cid-neegqouy]>.a-mainTitle[data-astro-cid-neegqouy] .a-nameBorder[data-astro-cid-neegqouy]{display:block;color:var(--onPrimaryContainer);background-color:var(--primaryContainer);font-weight:600;padding:0 .2em;overflow-wrap:break-word;max-width:100%}.a-matrixTitleBlock[data-astro-cid-neegqouy]>.a-mainTitle[data-astro-cid-neegqouy] .u-sepSlash[data-astro-cid-neegqouy]{opacity:.5}.a-matrixTitleBlock[data-astro-cid-neegqouy]>.a-mainTitle[data-astro-cid-neegqouy]>p[data-astro-cid-neegqouy]{font-size:var(--font-size-smol);margin:0;font-weight:400;text-align:center;color:var(--onSurfaceVariant)}.a-matrixTitleBlock[data-astro-cid-neegqouy]>.a-subTitle[data-astro-cid-neegqouy]{font-size:var(--font-size-title)}@keyframes scroll-for-left{0%{transform:translate(25%)}to{transform:translate(75%)}}@keyframes scroll-for-right{0%{transform:translate(-25%)}to{transform:translate(-75%)}}
 </style>
-<link rel="stylesheet" href="/assets/about.Cg0fPa7i.css"><script type="module" src="/assets/hoisted.bfr3y7ta.js"></script>
+<link rel="stylesheet" href="/assets/about.DWfmTKkx.css"><script type="module" src="/assets/hoisted.bfr3y7ta.js"></script>
 <script type="module" src="/assets/page.V2R8AmkL.js"></script><style>[data-astro-transition-scope="astro-sxbfqckq-2"] { view-transition-name: astro-sxbfqckq-2; }@layer astro { ::view-transition-old(astro-sxbfqckq-2) { animation: none; opacity: 0; mix-blend-mode: normal; }::view-transition-new(astro-sxbfqckq-2) { animation: none; mix-blend-mode: normal; }::view-transition-group(astro-sxbfqckq-2) { animation: none } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-sxbfqckq-2"],
 			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-sxbfqckq-2"] { animation: none; mix-blend-mode: normal; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-sxbfqckq-2"],
 			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-sxbfqckq-2"] { animation: none; mix-blend-mode: normal; }</style><style>[data-astro-transition-scope="astro-bewwnust-3"] { view-transition-name: astro-bewwnust-3; }@layer astro { ::view-transition-old(astro-bewwnust-3) { animation: none; opacity: 0; mix-blend-mode: normal; }::view-transition-new(astro-bewwnust-3) { animation: none; mix-blend-mode: normal; }::view-transition-group(astro-bewwnust-3) { animation: none } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-bewwnust-3"],
@@ -31,20 +41,30 @@ Greetings, I am..
 Home
 </a></li><li id="aboutButton" class="a-navBar__listItem u-leafBorder__small" data-astro-cid-z62d7jos><a href="/about/" class="" data-astro-prefetch data-astro-cid-z62d7jos>
 About
-</a></li></div><div class="u-navFlex__right u-navFlex" data-astro-cid-z62d7jos><li id="themeButton" class="a-navBar__listItem u-leafBorder__small" data-astro-cid-z62d7jos><div class="m-navBar__themeChanger" data-astro-cid-7fdqp23o> <svg class="a-themeChangeButton" data-astro-cid-7fdqp23o> <use class="u-selThemeSymbol" xlink:href="#theme-light" data-astro-cid-7fdqp23o></use> </svg> </div> <svg style="display: none" data-astro-cid-7fdqp23o> <defs data-astro-cid-7fdqp23o> <symbol class="u-themeSymbol" id="theme-light" viewBox="0 0 24 24" data-astro-cid-7fdqp23o><path xmlns="http://www.w3.org/2000/svg" d="M12 19a1 1 0 0 1 .993.883L13 20v1a1 1 0 0 1-1.993.117L11 21v-1a1 1 0 0 1 1-1zm6.313-2.09.094.083.7.7a1 1 0 0 1-1.32 1.497l-.094-.083-.7-.7a1 1 0 0 1 1.218-1.567l.102.07zm-11.306.083a1 1 0 0 1 .083 1.32l-.083.094-.7.7a1 1 0 0 1-1.497-1.32l.083-.094.7-.7a1 1 0 0 1 1.414 0zM4 11a1 1 0 0 1 .117 1.993L4 13H3a1 1 0 0 1-.117-1.993L3 11h1zm17 0a1 1 0 0 1 .117 1.993L21 13h-1a1 1 0 0 1-.117-1.993L20 11h1zM6.213 4.81l.094.083.7.7a1 1 0 0 1-1.32 1.497l-.094-.083-.7-.7A1 1 0 0 1 6.11 4.74l.102.07zm12.894.083a1 1 0 0 1 .083 1.32l-.083.094-.7.7a1 1 0 0 1-1.497-1.32l.083-.094.7-.7a1 1 0 0 1 1.414 0zM12 2a1 1 0 0 1 .993.883L13 3v1a1 1 0 0 1-1.993.117L11 4V3a1 1 0 0 1 1-1zm0 5a5 5 0 1 1-4.995 5.217L7 12l.005-.217A5 5 0 0 1 12 7z" data-astro-cid-7fdqp23o></path></symbol> <symbol class="u-themeSymbol" id="theme-dark" viewBox="0 0 24 24" data-astro-cid-7fdqp23o><path xmlns="http://www.w3.org/2000/svg" d="M12 21q-3.775 0-6.388-2.613T3 12q0-3.45 2.25-5.988T11 3.05q.625-.075.975.45t-.025 1.1q-.425.65-.638 1.375T11.1 7.5q0 2.25 1.575 3.825T16.5 12.9q.775 0 1.538-.225t1.362-.625q.525-.35 1.075-.037t.475.987q-.35 3.45-2.937 5.725T12 21Zm0-2q2.2 0 3.95-1.213t2.55-3.162q-.5.125-1 .2t-1 .075q-3.075 0-5.238-2.163T9.1 7.5q0-.5.075-1t.2-1q-1.95.8-3.163 2.55T5 12q0 2.9 2.05 4.95T12 19Zm-.25-6.75Z" data-astro-cid-7fdqp23o></path></symbol> </defs> </svg> <script> 
-    let setUpThemeBtn = () => {
-        function setUpListener(event) {
-            if (document.documentElement.classList.contains("mt-dark")) {
-                event.target.querySelector("use").setAttribute("xlink:href", "#theme-dark");
+</a></li></div><div class="u-navFlex__right u-navFlex" data-astro-cid-z62d7jos><li id="themeButton" class="a-navBar__listItem u-leafBorder__small" data-astro-cid-z62d7jos><div class="m-navBar__themeChanger" data-astro-cid-7fdqp23o> <svg class="a-themeChangeButton" data-astro-cid-7fdqp23o> <use class="u-selThemeSymbol" xlink:href="#theme-light" data-astro-cid-7fdqp23o></use> </svg> </div> <svg style="display: none" data-astro-cid-7fdqp23o> <defs data-astro-cid-7fdqp23o> <symbol class="u-themeSymbol" id="theme-light" viewBox="0 0 24 24" data-astro-cid-7fdqp23o><path xmlns="http://www.w3.org/2000/svg" d="M12 19a1 1 0 0 1 .993.883L13 20v1a1 1 0 0 1-1.993.117L11 21v-1a1 1 0 0 1 1-1zm6.313-2.09.094.083.7.7a1 1 0 0 1-1.32 1.497l-.094-.083-.7-.7a1 1 0 0 1 1.218-1.567l.102.07zm-11.306.083a1 1 0 0 1 .083 1.32l-.083.094-.7.7a1 1 0 0 1-1.497-1.32l.083-.094.7-.7a1 1 0 0 1 1.414 0zM4 11a1 1 0 0 1 .117 1.993L4 13H3a1 1 0 0 1-.117-1.993L3 11h1zm17 0a1 1 0 0 1 .117 1.993L21 13h-1a1 1 0 0 1-.117-1.993L20 11h1zM6.213 4.81l.094.083.7.7a1 1 0 0 1-1.32 1.497l-.094-.083-.7-.7A1 1 0 0 1 6.11 4.74l.102.07zm12.894.083a1 1 0 0 1 .083 1.32l-.083.094-.7.7a1 1 0 0 1-1.497-1.32l.083-.094.7-.7a1 1 0 0 1 1.414 0zM12 2a1 1 0 0 1 .993.883L13 3v1a1 1 0 0 1-1.993.117L11 4V3a1 1 0 0 1 1-1zm0 5a5 5 0 1 1-4.995 5.217L7 12l.005-.217A5 5 0 0 1 12 7z" data-astro-cid-7fdqp23o></path></symbol> <symbol class="u-themeSymbol" id="theme-dark" viewBox="0 0 24 24" data-astro-cid-7fdqp23o><path xmlns="http://www.w3.org/2000/svg" d="M12 21q-3.775 0-6.388-2.613T3 12q0-3.45 2.25-5.988T11 3.05q.625-.075.975.45t-.025 1.1q-.425.65-.638 1.375T11.1 7.5q0 2.25 1.575 3.825T16.5 12.9q.775 0 1.538-.225t1.362-.625q.525-.35 1.075-.037t.475.987q-.35 3.45-2.937 5.725T12 21Zm0-2q2.2 0 3.95-1.213t2.55-3.162q-.5.125-1 .2t-1 .075q-3.075 0-5.238-2.163T9.1 7.5q0-.5.075-1t.2-1q-1.95.8-3.163 2.55T5 12q0 2.9 2.05 4.95T12 19Zm-.25-6.75Z" data-astro-cid-7fdqp23o></path></symbol> </defs> </svg> <script>
+    const navBarElem = document.querySelector(".m-navBar__themeChanger");
+    // const preferDark = window.
+
+    // when icon is dark it is in light mode, and vice versa
+    // 0 means dark, 1 means light and 2 means auto
+    const setUpThemeBtn = () => {
+        function setUpListener() {
+            // if (document.documentElement.classList.contains("mt-dark")) {
+            if (navBarElem.querySelector("use")?.attributes['xlink:href'].value == '#theme-dark') {
+                navBarElem.querySelector("use").setAttribute("xlink:href", "#theme-light");
                 window.localStorage.setItem("DARK_MODE","0");
-            } else {
-                event.target.querySelector("use").setAttribute("xlink:href", "#theme-light");
+                document.documentElement.classList.remove("mt-dark");
+            } else if (navBarElem.querySelector("use").attributes['xlink:href'].value == '#theme-light') {
+                navBarElem.querySelector("use").setAttribute("xlink:href", "#theme-auto");
+                window.localStorage.setItem("DARK_MODE","2");
+                window.matchMedia('(prefers-color-scheme: dark)').matches ? document.documentElement.classList.toggle("mt-dark") : 0;
+            } else if (navBarElem.querySelector("use").attributes['xlink:href'].value == '#theme-auto') {
+                navBarElem.querySelector("use").setAttribute("xlink:href", "#theme-dark");
                 window.localStorage.setItem("DARK_MODE","1");
+                document.documentElement.classList.add("mt-dark");
             }
-            document.documentElement.classList.toggle("mt-dark");
         }
-        
-        document.querySelector(".m-navBar__themeChanger")?.addEventListener("click", setUpListener);
+        navBarElem?.addEventListener("click", setUpListener);
     }
     
     window.addEventListener("DOMContentLoaded", () => {
