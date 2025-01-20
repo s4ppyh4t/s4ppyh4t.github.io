@@ -11,20 +11,27 @@
             const preferDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
 
             function setDarkMode() {
-                (themeMode() === "1" || (themeMode() === "2" && preferDarkMode.matches))
+                if (themeMode()) {
+                    (themeMode() === "1" || (themeMode() === "2" && preferDarkMode.matches))
                     ? document.documentElement.classList.add("mt-dark")
                     : 0;
+                    return
+                } 
+                if (preferDarkMode.matches) {
+                    document.documentElement.classList.add("mt-dark");
+                }
+                
             }
             function setIconMode() {
                 themeMode() === "1"
                     ? document
                         .querySelector(".u-selThemeSymbol")
                         .setAttribute("xlink:href", "#theme-dark")
-                    : themeMode() === "2"
-                    ? document
+                    : themeMode() === "0"
+                    ? 0
+                    : document
                         .querySelector(".u-selThemeSymbol")
-                        .setAttribute("xlink:href", "#theme-auto")
-                    : 0;
+                        .setAttribute("xlink:href", "#theme-auto");
             }
             preferDarkMode.addEventListener('change', () => {
                 themeMode() === "2" ? document.documentElement.classList.toggle("mt-dark") : 0;
